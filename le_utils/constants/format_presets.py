@@ -54,11 +54,20 @@ HTML5_THUMBNAIL_READABLE = "HTML5 Thumbnail"
 HTML5_DEPENDENCY_ZIP = "html5_dependency"
 HTML5_DEPENDENCY_ZIP_READABLE = "HTML5 Dependency (Zip format)"
 
+SLIDESHOW_IMAGE = "slideshow_image"
+SLIDESHOW_IMAGE_READABLE = "Slideshow Image"
+
+SLIDESHOW_THUMBNAIL = "slideshow_thumbnail"
+SLIDESHOW_THUMBNAIL_READABLE = "Slideshow Thumbnail"
+
+SLIDESHOW_MANIFEST = "slideshow_manifest"
+SLIDESHOW_MANIFEST_READABLE = "Slideshow Manifest"
+
 
 choices = (
     (VIDEO_HIGH_RES, _(VIDEO_HIGH_RES_READABLE)),
     (VIDEO_LOW_RES, _(VIDEO_LOW_RES_READABLE)),
-    (VIDEO_VECTOR, _(VIDEO_VECTOR_READABLE)),
+    # (VIDEO_VECTOR, _(VIDEO_VECTOR_READABLE)),  # doesn't exist yet so took out
     (VIDEO_THUMBNAIL, _(VIDEO_THUMBNAIL_READABLE)),
     (VIDEO_SUBTITLE, _(VIDEO_SUBTITLE_READABLE)),
     (VIDEO_DEPENDENCY, _(VIDEO_DEPENDENCY_READABLE)),
@@ -81,12 +90,26 @@ choices = (
     (HTML5_ZIP, _(HTML5_ZIP_READABLE)),
     (HTML5_DEPENDENCY_ZIP, _(HTML5_DEPENDENCY_ZIP_READABLE)),
     (HTML5_THUMBNAIL, _(HTML5_THUMBNAIL_READABLE)),
+
+    (SLIDESHOW_IMAGE, _(SLIDESHOW_IMAGE_READABLE)),
+    (SLIDESHOW_THUMBNAIL, _(SLIDESHOW_THUMBNAIL_READABLE)),
+    (SLIDESHOW_MANIFEST, _(SLIDESHOW_MANIFEST_READABLE)),
 )
 
 
 class Preset(
     namedtuple("Preset", [
-            "id", "readable_name", "multi_language", "supplementary", "thumbnail", "subtitle", "display", "order", "kind", "allowed_formats"
+            "id",
+            "readable_name",
+            "multi_language",
+            "supplementary",
+            "thumbnail",
+            "subtitle",
+            "display",
+            "order",
+            "kind",
+            "allowed_formats",
+            "convertible_formats"
         ])):
     pass
 

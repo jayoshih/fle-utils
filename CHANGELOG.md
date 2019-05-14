@@ -1,6 +1,51 @@
 Release History
 ===============
 
+
+0.1.17 Apr 24, 2019
+-------------------
+  - Added necessary constants for Slideshows:
+    - New content kind added: `slideshow`
+    - New format presets added:
+      - `slideshow_image`: represents a node-file association of the individual slideshow images part of the slideshow content node
+      - `slideshow_thumbnail`: the thumbnail for content nodes of kind=slideshow
+      - `slideshow_manifest` (allowed_formats: `.json`) :
+          the json manifest file for the slideshow generated during `exportchannel` for Kolibri consumption.
+          This file will contain json of slideshow data computer from the studio DB
+          (contents=association info `studio.models.ContentNode` --fk-- `studio.models.SlideshowSlide`)
+
+
+0.1.15 Nov 29, 2018
+-------------------
+  - Added the following language codes:
+    - ach = Acholi
+    - fuv = Fulfulde Mbororo 
+    - xog = Soga
+    - tuv = Turkana
+    - lwg = Oluwanga
+    - nyn = Nyankore
+    - myx = Masaaba
+
+
+
+0.1.14 Nov 7, 2018
+------------------
+  - Duplicated python constants/ definitions as json files under resources/ (for easier integration with frontend)
+  - Added tests to make sure python constants are in sync with json constants
+  - Implemented first_native_name helper (used to set channel names in chefs)
+  - Added list-like `convertible_formats` attribute for all presets
+  - Added  `html5_dependency` and `video_dependency` presets
+  - Updated constant mapping with epub -- The EPUB preset is used with document content type
+  - Added the following language codes:
+     - und = Undefined
+     - mul = Multiple languages
+     - arq = Algerian; Darja
+     - lkt = Lakhota; Lakotiyapi; Teton
+     - hdy = Hadiyya; Hadiya; Adea; Adiya; Hadia
+     - sid = Sidamo; Sidaamu afii; Sidaama; Sidama
+     - wal = Wolaytta; Borodda; Uba; Ometo
+
+
 0.1.6 Mar 13, 2018
 ------------------
   - Added file format constants for ePub
